@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 1.11.0"
 
   backend "s3" {
-    bucket = "fase4-terraform-states"
+    bucket = "fase4-terraform-state"
     key    = "fase4-infra-microservices/terraform.tfstate"
     region = "us-east-1"
   }
