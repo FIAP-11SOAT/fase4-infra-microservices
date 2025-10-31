@@ -13,6 +13,8 @@ resource "aws_secretsmanager_secret_version" "secrets" {
   secret_string = jsonencode({
     VPC_ID           = module.vpc.vpc_id,
     GTW_ID           = aws_apigatewayv2_api.gtw.id,
+    ALB_ARN          = aws_lb.ecs_alb.arn,
+    ALB_LISTENER_ARN = aws_lb_listener.ecs_alb_listener.arn,
     ECS_CLUSTER_ID   = aws_ecs_cluster.ecs_cluster.id,
     RDS_HOST         = module.rds.db_instance_address,
     RDS_PORT         = module.rds.db_instance_port,
