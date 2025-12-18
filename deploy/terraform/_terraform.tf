@@ -23,5 +23,10 @@ terraform {
       version = "3.0.2"
     }
 
+    jose = {
+      source  = "aiyor-tf/jose"
+      version = "0.1.0"
+    }
+
   }
 }
