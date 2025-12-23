@@ -16,8 +16,8 @@ module "rds" {
   instance_class       = "db.t4g.micro"
   allocated_storage    = 20
 
-  db_name                     = "${local.project_name}-db"
-  username                    = "${local.project_name}-user"
+  db_name                     = replace("${local.project_name}-db", "-", "_")
+  username                    = replace("${local.project_name}-user", "-", "_")
   password                    = random_password.rds_password.result
   manage_master_user_password = false
 
